@@ -10,7 +10,7 @@ export const experience: ExperienceItem[] = [
   {
     role: "Flutter Developer",
     company: "Your Company Name",
-    period: "2024 — Present",
+    period: "2025 — Present",
     points: [
       "Built and maintained X mobile app(s) used by Y+ users.",
       "Worked with the team to ship features across Android & iOS.",
