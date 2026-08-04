@@ -5,7 +5,7 @@ export const skillGroups = [
   },
   {
     label: "State & Architecture",
-    items: ["Bloc", "Riverpod", "Provider", "Clean Architecture"],
+    items: ["Getx", "Bloc", "Riverpod", "Provider", "Clean Architecture"],
   },
   {
     label: "Backend & Data",

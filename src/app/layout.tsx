@@ -36,6 +36,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        try {
+          const saved = localStorage.getItem('theme');
+          if (saved === 'light') document.documentElement.classList.add('light');
+        } catch (e) {}
+      `,
+          }}
+        />
+      </head>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >

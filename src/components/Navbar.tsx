@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navLinks } from "@/data/nav";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar() {
   return (
@@ -23,7 +24,7 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-
+        <ThemeToggle />
         <a
           href="#contact"
           className="rounded-full border border-[var(--color-accent)] px-4 py-1.5 text-sm text-[var(--color-accent)] transition-colors hover:bg-[var(--color-accent)] hover:text-[var(--color-bg)]"
