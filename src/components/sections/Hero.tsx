@@ -9,13 +9,12 @@ export default function Hero() {
         </p>
 
         <h1 className="font-[family-name:var(--font-display)] text-4xl font-semibold leading-tight md:text-6xl">
-          Hi, I&apos;m <span className="text-[var(--color-accent)]">Your Name</span>
-          <br />I build Flutter apps that feel native.
+          Hi, I&apos;m <span className="text-[var(--color-accent)]">Injamam Ul Hoque Sifat</span>
+          <br />I build modern Flutter apps that people love to use.
         </h1>
 
         <p className="max-w-xl text-[var(--color-text-muted)] md:text-lg">
-          Mobile app developer focused on smooth UI, clean architecture, and
-          shipping real products to the Play Store and App Store.
+          Flutter Developer passionate about creating fast, scalable, and user-friendly mobile applications with clean architecture, responsive UI, and production-ready solutions.
         </p>
 
         <div className="flex flex-wrap gap-4 pt-2">
@@ -32,9 +31,9 @@ export default function Hero() {
         <div className="absolute inset-0 -z-10 rounded-full bg-[var(--color-accent-soft)] blur-3xl" />
         <Image
           src="/assets/profile.jpg"
-          alt="Your Name"
+          alt="Injamam Ul Hoque Sifat"
           width={320}
-          height={320}
+          height={200}
           priority
           className="rounded-3xl border border-[var(--color-border)] object-cover"
         />
