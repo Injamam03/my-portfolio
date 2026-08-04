@@ -20,19 +20,19 @@ export default function Contact() {
         <input
           type="text"
           name="name"
-          placeholder="Your name"
+          placeholder="Enter Your Name"
           className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm outline-none placeholder:text-[var(--color-text-muted)] focus-visible:border-[var(--color-accent)]"
         />
         <input
           type="email"
           name="email"
-          placeholder="Your email"
+          placeholder="Enter Your Email"
           className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm outline-none placeholder:text-[var(--color-text-muted)] focus-visible:border-[var(--color-accent)]"
         />
         <textarea
           name="message"
           rows={4}
-          placeholder="Your message"
+          placeholder="Enter Your Message"
           className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm outline-none placeholder:text-[var(--color-text-muted)] focus-visible:border-[var(--color-accent)]"
         />
         <button

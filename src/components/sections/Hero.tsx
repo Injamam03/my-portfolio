@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="container-px mx-auto flex max-w-6xl flex-col items-center gap-10 py-24 md:flex-row md:py-32">
-      <div className="flex flex-1 flex-col items-start gap-6">
+    <section className="container-px mx-auto flex max-w-6xl flex-col items-center gap-10 py-24 md:flex-row md:items-center md:justify-between md:gap-6 md:py-32">
+      <div className="flex w-full flex-col items-start gap-6 md:w-[58%]">
         <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-mint)]">
           $ flutter run
         </p>
@@ -27,16 +27,23 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative shrink-0">
+      <div className="relative flex w-full justify-center md:w-[42%] md:justify-end">
         <div className="absolute inset-0 -z-10 rounded-full bg-[var(--color-accent-soft)] blur-3xl" />
-        <Image
-          src="/assets/profile.jpg"
-          alt="Injamam Ul Hoque Sifat"
-          width={320}
-          height={200}
-          priority
-          className="rounded-3xl border border-[var(--color-border)] object-cover"
-        />
+
+        <div className="relative h-[280px] w-[280px] rounded-full p-[4px] md:h-[340px] md:w-[340px]">
+          <div className="animated-ring absolute inset-0 rounded-full" />
+
+          <div className="relative h-full w-full overflow-hidden rounded-full bg-[var(--color-bg)] p-[3px]">
+            <Image
+              src="/assets/profile.jpg"
+              alt="Injamam Ul Hoque Sifat"
+              width={340}
+              height={340}
+              priority
+              className="h-full w-full rounded-full border border-[var(--color-border)] object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
