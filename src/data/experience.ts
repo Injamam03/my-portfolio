@@ -4,11 +4,10 @@ export type ExperienceItem = {
   companyUrl?: string;
   period: string;
   current?: boolean;
-  stack?: string[];
   points: string[];
+  stack?: string[];
 };
 
-// TODO: Tomar real work experience diye replace koro
 export const experience: ExperienceItem[] = [
   {
     period: "2025 — Present",

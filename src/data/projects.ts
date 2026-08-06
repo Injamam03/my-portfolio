@@ -1,42 +1,40 @@
 export type Project = {
   id: string;
   name: string;
-  tagline: string;
   description: string;
-  stack: string[];
-  screenColor: string; // temp gradient color for phone mockup, replace with real screenshot later
+  tags: string[];
+  screenshots: string[];
+  bannerGradient: string;
   playStoreUrl?: string;
   githubUrl?: string;
 };
 
-// TODO: Tomar real app project gulo diye ei array replace koro.
-// screenColor er jaygay pore ekta real screenshot image lagabo.
 export const projects: Project[] = [
   {
-    id: "app-one",
-    name: "Project One",
-    tagline: "One line tagline of the app",
+    id: "yoga-with-jen",
+    name: "Yoga with Jen",
     description:
-      "Short description of what this app does and the problem it solves for users.",
-    stack: ["Flutter", "Firebase", "Riverpod"],
-    screenColor: "from-[#3A2E00] to-[#0d0d0f]",
+      "Premium subscription-based yoga & fitness platform with HD streaming, offline downloads, and community features.",
+    tags: ["Flutter", "GetX", "Kotlin", "Firebase"],
+    screenshots: ["/assets/1.png", "/assets/2.png"],
+    bannerGradient: "from-rose-200 via-rose-300 to-slate-700",
   },
   {
-    id: "app-two",
-    name: "Project Two",
-    tagline: "One line tagline of the app",
+    id: "ways2shop",
+    name: "Ways2Shop",
     description:
-      "Short description of what this app does and the problem it solves for users.",
-    stack: ["Flutter", "REST API", "Bloc"],
-    screenColor: "from-[#00302B] to-[#0d0d0f]",
+      "Two-sided service marketplace platform featuring provider subscriptions, Stripe Connect payouts, and real-time messaging.",
+    tags: ["Flutter", "Stripe", "GetX"],
+    screenshots: ["/assets/2.png", "/assets/3.png"],
+    bannerGradient: "from-amber-100 via-white to-slate-200",
   },
   {
-    id: "app-three",
-    name: "Project Three",
-    tagline: "One line tagline of the app",
+    id: "cryptox",
+    name: "CryptoX",
     description:
-      "Short description of what this app does and the problem it solves for users.",
-    stack: ["Flutter", "SQLite", "Provider"],
-    screenColor: "from-[#2A1400] to-[#0d0d0f]",
+      "Secure digital wallet platform featuring a hybrid UTXO-style traceable ledger, admin forensic tooling, and Stripe-powered top-ups.",
+    tags: ["Flutter", "Firebase", "Stripe", "Bloc"],
+    screenshots: ["/assets/1.png", "/assets/2.png", "/assets/3.png"],
+    bannerGradient: "from-indigo-200 via-purple-200 to-sky-200",
   },
 ];
