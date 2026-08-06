@@ -65,3 +65,21 @@ body {
     padding-right: 2.5rem;
   }
 }
+
+@keyframes border-grow {
+  0% {
+    background: conic-gradient(from 0deg,
+        var(--color-accent) 0deg,
+        transparent 0deg);
+  }
+
+  100% {
+    background: conic-gradient(from 0deg,
+        var(--color-accent) 360deg,
+        transparent 360deg);
+  }
+}
+
+.animated-ring {
+  animation: border-grow 2.5s linear infinite;
+}

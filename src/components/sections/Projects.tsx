@@ -1,49 +1,51 @@
 import { projects } from "@/data/projects";
-import PhoneMockup from "@/components/PhoneMockup";
+import ProjectCover from "@/components/ProjectCover";
 
 export default function Projects() {
   return (
     <section id="projects" className="container-px mx-auto max-w-6xl py-20">
       <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-mint)]">
-        03. Projects
+        ./flutter-projects
       </p>
-      <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold md:text-4xl">
-        Apps I&apos;ve built
+      <h2 className="mt-3 font-[family-name:var(--font-display)] text-4xl font-semibold md:text-5xl">
+        Flutter <span className="text-[var(--color-accent)]">Projects</span>
       </h2>
+      <p className="mt-3 text-[var(--color-text-muted)]">
+        {projects.length} apps built with Flutter.{" "}
+        <span className="font-[family-name:var(--font-mono)] text-[var(--color-mint)]">
+          Click a card to explore details.
+        </span>
+      </p>
 
-      <div className="mt-10 grid gap-8 md:grid-cols-3">
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className="flex flex-col items-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-center"
-          >
-            <PhoneMockup
-              screenColor={project.screenColor}
-              appName={project.name}
-            />
+      <div className="mt-10 grid gap-6 md:grid-cols-3">
+        {projects.map((project, i) => {
+          const visibleTags = project.tags.slice(0, 3);
+          const extraCount = project.tags.length - visibleTags.length;
 
-            <h3 className="mt-6 font-[family-name:var(--font-display)] text-lg font-semibold">
-              {project.name}
-            </h3>
-            <p className="mt-1 text-sm text-[var(--color-accent)]">
-              {project.tagline}
-            </p>
-            <p className="mt-3 text-sm text-[var(--color-text-muted)]">
-              {project.description}
-            </p>
+          return (
+            <a key={project.id} href={project.playStoreUrl ?? project.githubUrl ?? "#"} className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] transition-colors hover:border-[var(--color-accent)]">
+              <ProjectCover index={i + 1} screenshots={project.screenshots} bannerGradient={project.bannerGradient} />
 
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-[var(--color-border)] px-3 py-1 font-[family-name:var(--font-mono)] text-xs text-[var(--color-text-muted)]"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+              <div className="p-5">
+                <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold">{project.name}</h3>
+                <p className="mt-2 line-clamp-2 text-sm text-[var(--color-text-muted)]">{project.description}</p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {visibleTags.map((tag) => (
+                    <span key={tag} className="rounded-md border border-[var(--color-border)] px-2 py-1 font-[family-name:var(--font-mono)] text-xs text-[var(--color-text-muted)]">
+                      {tag}
+                    </span>
+                  ))}
+                  {extraCount > 0 && (
+                    <span className="rounded-md border border-[var(--color-border)] px-2 py-1 font-[family-name:var(--font-mono)] text-xs text-[var(--color-text-muted)]">
+                      +{extraCount}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </section>
   );

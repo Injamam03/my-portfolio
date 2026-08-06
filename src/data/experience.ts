@@ -1,29 +1,27 @@
 export type ExperienceItem = {
   role: string;
   company: string;
+  companyUrl?: string;
   period: string;
+  current?: boolean;
+  stack?: string[];
   points: string[];
 };
 
 // TODO: Tomar real work experience diye replace koro
 export const experience: ExperienceItem[] = [
   {
-    role: "Flutter Developer",
-    company: "Your Company Name",
     period: "2025 — Present",
-    points: [
-      "Built and maintained X mobile app(s) used by Y+ users.",
-      "Worked with the team to ship features across Android & iOS.",
-      "Integrated REST APIs and Firebase services.",
-    ],
-  },
-  {
     role: "Junior Flutter Developer",
-    company: "Previous Company",
-    period: "2023 — 2024",
+    company: "Sparktech Agency",
+    companyUrl: "https://www.sparktech.agency/",
+    current: true,
+    stack: ["Flutter", "Dart", "Firebase", "REST API"],
     points: [
-      "Assisted in building UI components from Figma designs.",
-      "Fixed bugs and improved app performance.",
+      "Built and maintained mobile app features used by real users.",
+      "Collaborated with the team to ship updates across Android & iOS.",
+      "Integrated REST APIs and Firebase services into production apps.",
+      "Translated Figma designs into responsive, pixel-accurate UI components.",
     ],
   },
 ];
