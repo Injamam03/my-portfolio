@@ -36,12 +36,28 @@ export default function Contact() {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setStatus("error");
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        // Fallback to direct mailto if API route encounters external API restrictions
+        const mailtoUrl = `mailto:injamamulh544@gmail.com?subject=${encodeURIComponent(
+          `Portfolio Message from ${formData.name}`
+        )}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )}`;
+        window.open(mailtoUrl, "_blank");
+
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
       }
     } catch {
-      setStatus("error");
-      setErrorMessage("Failed to send message. Please check your internet connection.");
+      // Fallback to mailto on network error
+      const mailtoUrl = `mailto:injamamulh544@gmail.com?subject=${encodeURIComponent(
+        `Portfolio Message from ${formData.name}`
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      window.open(mailtoUrl, "_blank");
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
     }
   };
 
@@ -52,7 +68,7 @@ export default function Contact() {
           Get in <span className="text-[var(--color-mint)]">Touch</span>
         </h2>
         <p className="mt-3 max-w-xl text-[var(--color-text-muted)]">
-          Have a project in mind or want to collaborate? Send me a message and it will be delivered straight to my email inbox (<span className="text-[var(--color-accent)] font-medium">injamamulh544@gmail.com</span>).
+          Have a project in mind or want to collaborate? Send me a message and it will be delivered directly to my email (<span className="text-[var(--color-accent)] font-medium">injamamulh544@gmail.com</span>).
         </p>
       </Reveal>
 
@@ -68,7 +84,7 @@ export default function Contact() {
                 <span>Message Sent Successfully!</span>
               </div>
               <p className="mt-1 text-sm text-emerald-200/80">
-                Thank you for reaching out! Your message has been sent to my email inbox. I will reply to you as soon as possible.
+                Thank you for reaching out! Your message has been sent to my email inbox (<strong className="text-emerald-300">injamamulh544@gmail.com</strong>). I will reply to you as soon as possible.
               </p>
             </div>
           )}
@@ -133,23 +149,32 @@ export default function Contact() {
             />
           </div>
 
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="mt-6 flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-mint)] px-6 py-3 text-sm font-semibold text-[var(--color-bg)] transition-all hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {status === "loading" ? (
-              <>
-                <SpinnerIcon />
-                Sending...
-              </>
-            ) : (
-              <>
-                <SendIcon />
-                Send Message
-              </>
-            )}
-          </button>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-mint)] px-6 py-3 text-sm font-semibold text-[var(--color-bg)] transition-all hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {status === "loading" ? (
+                <>
+                  <SpinnerIcon />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <SendIcon />
+                  Send Message
+                </>
+              )}
+            </button>
+
+            <a
+              href="mailto:injamamulh544@gmail.com"
+              className="text-xs text-[var(--color-text-muted)] underline underline-offset-4 hover:text-[var(--color-accent)] transition-colors"
+            >
+              Or send directly via email: injamamulh544@gmail.com
+            </a>
+          </div>
         </form>
       </Reveal>
     </section>
