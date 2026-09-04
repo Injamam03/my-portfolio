@@ -1,87 +1,89 @@
 import { educationData } from "@/data/education";
+import Reveal from "@/components/Reveal";
 
 export default function Education() {
   return (
     <section id="education" className="container-px mx-auto max-w-6xl py-20">
       {/* Section Header */}
-      <div className="flex items-center gap-2 font-[family-name:var(--font-mono)] text-sm text-[var(--color-mint)]">
-        <GraduationCapIcon className="h-4 w-4" />
-        <span>./education</span>
-      </div>
+      <Reveal direction="up">
+        <div className="flex items-center gap-2 font-[family-name:var(--font-mono)] text-sm text-[var(--color-mint)]">
+          <GraduationCapIcon className="h-4 w-4" />
+          <span>./education</span>
+        </div>
 
-      <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold md:text-5xl">
-        Academic <span className="text-[var(--color-mint)]">Background</span>
-      </h2>
+        <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold md:text-5xl">
+          Academic <span className="text-[var(--color-mint)]">Background</span>
+        </h2>
 
-      <p className="mt-3 max-w-xl text-[var(--color-text-muted)] md:text-lg">
-        Foundation in computer science fundamentals and engineering principles.
-      </p>
+        <p className="mt-3 max-w-xl text-[var(--color-text-muted)] md:text-lg">
+          Foundation in computer science fundamentals and engineering principles.
+        </p>
+      </Reveal>
 
       {/* Cards */}
       <div className="mt-10 space-y-6">
         {educationData.map((item, index) => (
-          <div
-            key={index}
-            className="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/60 p-6 backdrop-blur-sm md:p-8"
-          >
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
-              {/* Left Column - Degree Details */}
-              <div className="flex flex-col gap-4 md:col-span-7">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--color-mint)]/30 bg-[var(--color-mint)]/10 text-[var(--color-mint)]">
-                    <GraduationCapIcon className="h-6 w-6" />
-                  </div>
-                  <span className="rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-3 py-1 font-[family-name:var(--font-mono)] text-xs font-medium text-[var(--color-accent)]">
-                    {item.badge}
-                  </span>
-                </div>
-
-                <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[var(--color-accent)] sm:text-2xl">
-                  {item.degree}
-                </h3>
-
-                <div className="flex flex-col gap-2.5 text-sm text-[var(--color-text-muted)]">
-                  <div className="flex items-center gap-2.5 font-medium text-[var(--color-text)]">
-                    <BookIcon className="h-4 w-4 text-[var(--color-mint)]" />
-                    <span>{item.institution}</span>
-                  </div>
-
-                  <div className="flex items-center gap-2.5">
-                    <MapPinIcon className="h-4 w-4 text-[var(--color-mint)]" />
-                    <span>{item.location}</span>
-                  </div>
-
-                  <div className="flex items-center gap-2.5 font-[family-name:var(--font-mono)] text-xs">
-                    <CalendarIcon className="h-4 w-4 text-[var(--color-mint)]" />
-                    <span>{item.period}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Vertical Divider for MD+ screens */}
-              <div className="hidden md:col-span-1 md:flex md:justify-center">
-                <div className="h-full w-px bg-[var(--color-border)]" />
-              </div>
-
-              {/* Right Column - Key Coursework */}
-              <div className="flex flex-col gap-3 md:col-span-4">
-                <span className="font-[family-name:var(--font-mono)] text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">
-                  KEY COURSEWORK
-                </span>
-
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {item.coursework.map((course) => (
-                    <span
-                      key={course}
-                      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)]/80 px-3 py-1.5 font-[family-name:var(--font-mono)] text-xs text-[var(--color-text)] transition-colors hover:border-[var(--color-accent)]"
-                    >
-                      {course}
+          <Reveal key={index} direction="up" delay={index * 150}>
+            <div className="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/60 p-6 backdrop-blur-sm md:p-8 transition-all hover:border-[var(--color-accent)]/50">
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
+                {/* Left Column - Degree Details */}
+                <div className="flex flex-col gap-4 md:col-span-7">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--color-mint)]/30 bg-[var(--color-mint)]/10 text-[var(--color-mint)]">
+                      <GraduationCapIcon className="h-6 w-6" />
+                    </div>
+                    <span className="rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-3 py-1 font-[family-name:var(--font-mono)] text-xs font-medium text-[var(--color-accent)]">
+                      {item.badge}
                     </span>
-                  ))}
+                  </div>
+
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[var(--color-accent)] sm:text-2xl">
+                    {item.degree}
+                  </h3>
+
+                  <div className="flex flex-col gap-2.5 text-sm text-[var(--color-text-muted)]">
+                    <div className="flex items-center gap-2.5 font-medium text-[var(--color-text)]">
+                      <BookIcon className="h-4 w-4 text-[var(--color-mint)]" />
+                      <span>{item.institution}</span>
+                    </div>
+
+                    <div className="flex items-center gap-2.5">
+                      <MapPinIcon className="h-4 w-4 text-[var(--color-mint)]" />
+                      <span>{item.location}</span>
+                    </div>
+
+                    <div className="flex items-center gap-2.5 font-[family-name:var(--font-mono)] text-xs">
+                      <CalendarIcon className="h-4 w-4 text-[var(--color-mint)]" />
+                      <span>{item.period}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vertical Divider for MD+ screens */}
+                <div className="hidden md:col-span-1 md:flex md:justify-center">
+                  <div className="h-full w-px bg-[var(--color-border)]" />
+                </div>
+
+                {/* Right Column - Key Coursework */}
+                <div className="flex flex-col gap-3 md:col-span-4">
+                  <span className="font-[family-name:var(--font-mono)] text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">
+                    KEY COURSEWORK
+                  </span>
+
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {item.coursework.map((course) => (
+                      <span
+                        key={course}
+                        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)]/80 px-3 py-1.5 font-[family-name:var(--font-mono)] text-xs text-[var(--color-text)] transition-colors hover:border-[var(--color-accent)]"
+                      >
+                        {course}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

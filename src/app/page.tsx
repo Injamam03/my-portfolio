@@ -5,30 +5,17 @@ import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Education from "@/components/sections/Education";
 import Contact from "@/components/sections/Contact";
-import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Reveal>
-        <About />
-      </Reveal>
-      <Reveal>
-        <Skills />
-      </Reveal>
-      <Reveal>
-        <Projects />
-      </Reveal>
-      <Reveal>
-        <Experience />
-      </Reveal>
-      <Reveal>
-        <Education />
-      </Reveal>
-      <Reveal>
-        <Contact />
-      </Reveal>
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Education />
+      <Contact />
     </>
   );
 }
