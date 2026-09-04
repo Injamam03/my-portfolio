@@ -5,7 +5,7 @@ export default function Experience() {
   return (
     <section id="experience" className="container-px mx-auto max-w-6xl py-20">
       <Reveal direction="up">
-        <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-mint)]">
+        <p className="font-[family-name:var(--font-mono)] text-base font-semibold md:text-lg text-[var(--color-mint)]">
           04. Experience
         </p>
         <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-semibold md:text-4xl">

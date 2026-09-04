@@ -6,8 +6,8 @@ export default function Education() {
     <section id="education" className="container-px mx-auto max-w-6xl py-20">
       {/* Section Header */}
       <Reveal direction="up">
-        <div className="flex items-center gap-2 font-[family-name:var(--font-mono)] text-sm text-[var(--color-mint)]">
-          <GraduationCapIcon className="h-4 w-4" />
+        <div className="flex items-center gap-2 font-[family-name:var(--font-mono)] text-base font-semibold md:text-lg text-[var(--color-mint)]">
+          <GraduationCapIcon className="h-5 w-5" />
           <span>./education</span>
         </div>
 

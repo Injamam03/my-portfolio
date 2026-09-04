@@ -38,9 +38,9 @@ export default function Navbar() {
         {/* Brand Logo */}
         <Link
           href="#"
-          className="font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight transition-opacity hover:opacity-80"
+          className="font-[family-name:var(--font-display)] text-lg font-bold tracking-tight transition-opacity hover:opacity-80"
         >
-          injamam<span className="text-[var(--color-accent)]">.dev()</span>
+          My <span className="text-[var(--color-accent)]">Portfolio</span>
         </Link>
 
         {/* Nav Items Pill Container Box */}
