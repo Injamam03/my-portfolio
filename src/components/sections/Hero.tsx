@@ -43,7 +43,7 @@ export default function Hero() {
               alt="Injamam Ul Hoque Sifat"
               width={320}
               height={320}
-              priority
+              priority  
               className="h-full w-full rounded-full border border-[var(--color-border)] object-cover"
             />
           </div>

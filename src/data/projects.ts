@@ -31,10 +31,9 @@ export const projects: Project[] = [
   {
     id: "cryptox",
     name: "CryptoX",
-    description:
-      "Secure digital wallet platform featuring a hybrid UTXO-style traceable ledger, admin forensic tooling, and Stripe-powered top-ups.",
+    description: "Secure digital wallet platform featuring a hybrid UTXO-style traceable ledger, admin forensic tooling, and Stripe-powered top-ups.",
     tags: ["Flutter", "Firebase", "Stripe", "Bloc"],
-    screenshots: ["/assets/1.png", "/assets/2.png", "/assets/3.png"],
+    screenshots: ["/assets/projects/1.png", "/assets/projects/2.png", "/assets/projects/3.png"],
     bannerGradient: "from-indigo-200 via-purple-200 to-sky-200",
   },
 ];

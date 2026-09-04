@@ -10,13 +10,13 @@ export type EducationItem = {
 
 export const educationData: EducationItem[] = [
   {
-    degree: "Diploma in Computer Science and Engineering",
-    badge: "Diploma in CSE",
+    degree: "Diploma in Computer Science and Technology",
+    badge: "Diploma in CSt",
     institution: "Cox's Bazar Government Polytechnic Institute",
     location: "Cox's Bazar, Bangladesh",
     period: "Jan 2021 — Nov 2025",
     description:
-      "Foundation in computer science fundamentals and engineering principles.",
+      "Foundation in computer science fundamentals.",
     coursework: [
       "Data Structures & Algorithms",
       "Object-Oriented Programming",

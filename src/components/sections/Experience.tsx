@@ -14,11 +14,10 @@ export default function Experience() {
         {experience.map((item, index) => (
           <div
             key={item.role + item.company}
-            className={`p-6 md:p-8 ${
-              index !== experience.length - 1
+            className={`p-6 md:p-8 ${index !== experience.length - 1
                 ? "border-b border-[var(--color-border)]"
                 : ""
-            }`}
+              }`}
           >
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="font-[family-name:var(--font-mono)] text-xs text-[var(--color-text-muted)]">
