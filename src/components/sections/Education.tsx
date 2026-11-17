@@ -1,22 +1,22 @@
-import { educationData } from "@/data/education";
 import Reveal from "@/components/Reveal";
+import { educationData } from "@/data/education";
+import { GraduationCap, BookOpen, MapPin, Calendar } from "lucide-react";
 
 export default function Education() {
   return (
-    <section id="education" className="container-px mx-auto max-w-6xl py-20">
-      {/* Section Header */}
+    <section id="education" className="container-px mx-auto max-w-6xl py-20 border-t border-[var(--color-border)]/50">
       <Reveal direction="up">
-        <div className="flex items-center gap-2 font-[family-name:var(--font-mono)] text-base font-semibold md:text-lg text-[var(--color-mint)]">
-          <GraduationCapIcon className="h-5 w-5" />
-          <span>./education</span>
+        <div className="flex items-center gap-2">
+          <span className="font-[family-name:var(--font-mono)] text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+            {"// 07. Education & Foundations"}
+          </span>
+          <span className="h-px flex-1 max-w-[60px] bg-[var(--color-accent)]/40" />
         </div>
-
-        <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold md:text-5xl">
-          Academic <span className="text-[var(--color-mint)]">Background</span>
+        <h2 className="mt-3 font-[family-name:var(--font-display)] text-3xl font-bold md:text-4xl">
+          Academic <span className="text-[var(--color-accent)]">Background</span>
         </h2>
-
-        <p className="mt-3 max-w-xl text-[var(--color-text-muted)] md:text-lg">
-          Foundation in computer science fundamentals and engineering principles.
+        <p className="mt-3 max-w-2xl text-sm sm:text-base text-[var(--color-text-muted)]">
+          Rigorous foundation in computer science fundamentals, engineering systems, and algorithms.
         </p>
       </Reveal>
 
@@ -24,57 +24,57 @@ export default function Education() {
       <div className="mt-10 space-y-6">
         {educationData.map((item, index) => (
           <Reveal key={index} direction="up" delay={index * 150}>
-            <div className="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/60 p-6 backdrop-blur-sm md:p-8 transition-all hover:border-[var(--color-accent)]/50">
+            <div className="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/70 p-6 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:border-[var(--color-accent)]/60 hover:shadow-xl">
               <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
-                {/* Left Column - Degree Details */}
+                {/* Left Column: Degree & Institution */}
                 <div className="flex flex-col gap-4 md:col-span-7">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--color-mint)]/30 bg-[var(--color-mint)]/10 text-[var(--color-mint)]">
-                      <GraduationCapIcon className="h-6 w-6" />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                      <GraduationCap size={22} />
                     </div>
-                    <span className="rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-3 py-1 font-[family-name:var(--font-mono)] text-xs font-medium text-[var(--color-accent)]">
+                    <span className="rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent-soft)] px-3 py-1 font-[family-name:var(--font-mono)] text-xs font-semibold text-[var(--color-accent)]">
                       {item.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[var(--color-accent)] sm:text-2xl">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[var(--color-text)] sm:text-2xl">
                     {item.degree}
                   </h3>
 
-                  <div className="flex flex-col gap-2.5 text-sm text-[var(--color-text-muted)]">
-                    <div className="flex items-center gap-2.5 font-medium text-[var(--color-text)]">
-                      <BookIcon className="h-4 w-4 text-[var(--color-mint)]" />
+                  <div className="flex flex-col gap-2 text-xs sm:text-sm text-[var(--color-text-muted)]">
+                    <div className="flex items-center gap-2 font-medium text-[var(--color-text)]">
+                      <BookOpen size={14} className="text-[var(--color-accent)]" />
                       <span>{item.institution}</span>
                     </div>
 
-                    <div className="flex items-center gap-2.5">
-                      <MapPinIcon className="h-4 w-4 text-[var(--color-mint)]" />
+                    <div className="flex items-center gap-2">
+                      <MapPin size={14} className="text-[var(--color-accent)]" />
                       <span>{item.location}</span>
                     </div>
 
-                    <div className="flex items-center gap-2.5 font-[family-name:var(--font-mono)] text-xs">
-                      <CalendarIcon className="h-4 w-4 text-[var(--color-mint)]" />
+                    <div className="flex items-center gap-2 font-[family-name:var(--font-mono)] text-xs">
+                      <Calendar size={14} className="text-[var(--color-accent)]" />
                       <span>{item.period}</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Vertical Divider for MD+ screens */}
+                {/* Vertical Divider */}
                 <div className="hidden md:col-span-1 md:flex md:justify-center">
-                  <div className="h-full w-px bg-[var(--color-border)]" />
+                  <div className="h-32 w-px bg-[var(--color-border)]" />
                 </div>
 
-                {/* Right Column - Key Coursework */}
+                {/* Right Column: Key Coursework */}
                 <div className="flex flex-col gap-3 md:col-span-4">
-                  <span className="font-[family-name:var(--font-mono)] text-xs font-semibold tracking-wider uppercase text-[var(--color-text-muted)]">
-                    KEY COURSEWORK
+                  <span className="font-[family-name:var(--font-mono)] text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+                    Key Coursework
                   </span>
 
-                  <div className="flex flex-wrap gap-2 pt-1">
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {item.coursework.map((course) => (
                       <span
                         key={course}
-                        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)]/80 px-3 py-1.5 font-[family-name:var(--font-mono)] text-xs text-[var(--color-text)] transition-colors hover:border-[var(--color-accent)]"
+                        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-2)]/80 px-2.5 py-1 font-[family-name:var(--font-mono)] text-xs text-[var(--color-text)] transition-colors hover:border-[var(--color-accent)]"
                       >
                         {course}
                       </span>
@@ -87,76 +87,5 @@ export default function Education() {
         ))}
       </div>
     </section>
-  );
-}
-
-// Icons
-function GraduationCapIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-      <path d="M6 12v5c3 3 9 3 12 0v-5" />
-    </svg>
-  );
-}
-
-function BookIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-    </svg>
-  );
-}
-
-function MapPinIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function CalendarIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-      <line x1="16" y1="2" x2="16" y2="6" />
-      <line x1="8" y1="2" x2="8" y2="6" />
-      <line x1="3" y1="10" x2="21" y2="10" />
-    </svg>
   );
 }
